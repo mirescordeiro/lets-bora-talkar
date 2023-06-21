@@ -1,23 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
-@customElement('my-element')
-export class MyElement extends LitElement {
-  /**
-   * Copy for the read the docs hint.
-   */
-  @property()
-  docsHint = 'Click on the Vite and Lit logos to learn more'
+@customElement('team-scoreboard')
+export class teamScoreboard extends LitElement {
 
-  /**
-   * The number of times the button has been clicked.
-   */
   @property({ type: Number })
   count = 0
   @property({ type: String})
@@ -100,6 +86,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement
+    'team-scoreboard': teamScoreboard
   }
 }

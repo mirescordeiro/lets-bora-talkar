@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/team-scoreboard.ts"></script>
   </head>
   <body>
     <header>
       <h3>Let's Bora</h3>
       <h1>Talkar</h1>
     </header>
-    <my-element></my-element>
+    <main>
+      <team-scoreboard id="team-a" team="Team A"></team-scoreboard>
+      <team-scoreboard id="team-b" team="Team B"></team-scoreboard>
+    </main>
   </body>
 </html>
