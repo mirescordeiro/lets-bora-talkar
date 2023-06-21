@@ -26,9 +26,29 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 8em;
+  margin-top: 8em;
+}
+
+h1 {
+  font-size: 5em;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.5em;
 }
 
 @media (prefers-color-scheme: light) {

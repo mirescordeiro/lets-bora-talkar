@@ -1,7 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import litLogo from './assets/lit.svg'
-import viteLogo from '/vite.svg'
 
 /**
  * An example element.
@@ -22,24 +20,20 @@ export class MyElement extends LitElement {
    */
   @property({ type: Number })
   count = 0
+  @property({ type: String})
+  id = 'team'
+  @property({ type: String})
+  team = 'Team'
 
   render() {
     return html`
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
-        </a>
-      </div>
-      <slot></slot>
       <div class="card">
         <button @click=${this._onClick} part="button">
-          count is ${this.count}
+          ${this.count}
         </button>
+        <label for=${this.id}>${this.team}</label>
+        <textarea id=${this.id} name=${this.id} rows="8" cols="10"></textarea>
       </div>
-      <p class="read-the-docs">${this.docsHint}</p>
     `
   }
 
@@ -49,52 +43,23 @@ export class MyElement extends LitElement {
 
   static styles = css`
     :host {
-      max-width: 1280px;
       margin: 0 auto;
       padding: 2rem;
       text-align: center;
     }
 
-    .logo {
-      height: 6em;
-      padding: 1.5em;
-      will-change: filter;
-      transition: filter 300ms;
-    }
-    .logo:hover {
-      filter: drop-shadow(0 0 2em #646cffaa);
-    }
-    .logo.lit:hover {
-      filter: drop-shadow(0 0 2em #325cffaa);
-    }
-
     .card {
-      padding: 2em;
-    }
-
-    .read-the-docs {
-      color: #888;
-    }
-
-    ::slotted(h1) {
-      font-size: 3.2em;
-      line-height: 1.1;
-    }
-
-    a {
-      font-weight: 500;
-      color: #646cff;
-      text-decoration: inherit;
-    }
-    a:hover {
-      color: #535bf2;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 8em;
     }
 
     button {
       border-radius: 8px;
       border: 1px solid transparent;
       padding: 0.6em 1.2em;
-      font-size: 1em;
+      font-size: 2em;
       font-weight: 500;
       font-family: inherit;
       background-color: #1a1a1a;
@@ -102,11 +67,24 @@ export class MyElement extends LitElement {
       transition: border-color 0.25s;
     }
     button:hover {
-      border-color: #646cff;
+      border-color: #213547;
     }
     button:focus,
     button:focus-visible {
       outline: 4px auto -webkit-focus-ring-color;
+    }
+
+    textarea {
+      padding: 20px 0;
+      font-weight: 400;
+      font-family: inherit;
+      font-size: 0.95em;
+      line-height: 1.5;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #213547;
+      border-radius: 8px;
+      background-color: #f9f9f9;
     }
 
     @media (prefers-color-scheme: light) {
