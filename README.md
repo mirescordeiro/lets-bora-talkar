@@ -1,2 +1,2 @@
-# lets-bora-talkar
-Site estático com placar simples utilizando Lit + Vite
+# Let's bora Talkar
+Placar simples utilizando Lit + Vite
